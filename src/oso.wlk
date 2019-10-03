@@ -1,8 +1,9 @@
 import wollok.game.*
-
-object hector {
+import hector.*
+import cultivos.*
+object oso {
 	var property position = new Position(x = 3, y = 3)
-	const property image = "player.png"
+	const property image = "spot.png"
 	var property plantasCosechadas=[]
 	method plantarMaiz(){
 		game.addVisual(new Maiz(position=self.position()))
@@ -19,6 +20,5 @@ object hector {
 		return plantasCosechadas.size()
 	}	
 	method moveteALaIzquierda(){}
-		
 	
 }

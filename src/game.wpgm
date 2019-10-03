@@ -5,8 +5,8 @@ import cultivos.*
 program farmville {
 	//  CONFIG	
 	game.title("FarmVille")
-	game.height(10)
-	game.width(10)
+	game.height(10)//altura
+	game.width(10)//ancho
 	game.ground("ground.png")
 
 	//  VISUALES
@@ -15,4 +15,19 @@ program farmville {
  	
  	//  COMIENZA
 	game.start()
+	//CONTROL DE TECLADO
+	keyboard.a().onPressDo({})
+	keyboard.s().onPressDo({game.say(hector,"holaGente")})
+	keyboard.o().onPressDo({hector.position(new Position(x=0,y=0))})
+	keyboard.m().onPresDo({hector.plantarMaiz()})
+	keyboard.r().onPressDo({hector.regarPlanta()})
+	keyboard.c().onPressDo({hector.cosecharPlanta()})
+	keyboard.p().onPressDo({game.say(hector,"tengo Cosechadas" + hector.cantidadDePlantasCosechadas()+"plantas")})
+	keyboard.left().onPressDo({hector.moveteALaIzquierda()})	
+	
+	
+// Al apretar la M siembra una semilla de maíz en su posición actual.
+// Al apretar la T siembra una semilla de trigo en su posición actual.
+// Al apretar la O siembra una semilla de tomaco en su posición actual.	
+	
 }
