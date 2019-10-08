@@ -1,4 +1,6 @@
 import wollok.game.*
+import cultivos.*
+import juegogranja.*
 
 object hector {
 	var property position = new Position(x = 3, y = 3)
@@ -18,7 +20,9 @@ object hector {
 	method cantidadDePlantasCosechadas(){
 		return plantasCosechadas.size()
 	}	
+	
 	method moveteALaIzquierda(){}
+	method teChocoElOso(){}
 		
 	
 }

@@ -1,6 +1,9 @@
 import wollok.game.*
 import hector.*
 import cultivos.*
+import oso.*
+import juegogranja.*
+import direcciones.*
 
 program farmville {
 	//  CONFIG	
@@ -9,25 +12,19 @@ program farmville {
 	game.width(10)//ancho
 	game.ground("ground.png")
 
-	//  VISUALES
- 	game.addVisualCharacter(hector)
- 	game.addVisualIn(new Maiz(), game.at(1, 1))
- 	
- 	//  COMIENZA
+
+
+	// COLISIONES
+   juegoGranja.configurarColisiones()
+   // VISUALES
+   juegoGranja.configurarTeclado()
+   juegoGranja.configurarPersonajes()
+   juegoGranja.configurarMovimientos()
+   //  COMIENZA
 	game.start()
-	//CONTROL DE TECLADO
-	keyboard.a().onPressDo({})
-	keyboard.s().onPressDo({game.say(hector,"holaGente")})
-	keyboard.o().onPressDo({hector.position(new Position(x=0,y=0))})
-	keyboard.m().onPresDo({hector.plantarMaiz()})
-	keyboard.r().onPressDo({hector.regarPlanta()})
-	keyboard.c().onPressDo({hector.cosecharPlanta()})
-	keyboard.p().onPressDo({game.say(hector,"tengo Cosechadas" + hector.cantidadDePlantasCosechadas()+"plantas")})
-	keyboard.left().onPressDo({hector.moveteALaIzquierda()})	
+	//configurarAcciones
+	juegoGranja.configurarAcciones(){
 	
-	
-// Al apretar la M siembra una semilla de maíz en su posición actual.
-// Al apretar la T siembra una semilla de trigo en su posición actual.
-// Al apretar la O siembra una semilla de tomaco en su posición actual.	
-	
+	}
+ 	
 }
