@@ -14,17 +14,20 @@ program farmville {
 
 
 
-	// COLISIONES
-   juegoGranja.configurarColisiones()
+	
    // VISUALES
+    juegoGranja.configurarPersonajes()
    juegoGranja.configurarTeclado()
-   juegoGranja.configurarPersonajes()
-   juegoGranja.configurarMovimientos()
+   
+ 
+   //juegoGranja.configurarColisiones()
+  
+  //configurarAcciones
+	juegoGranja.configurarAcciones()
+	
    //  COMIENZA
 	game.start()
-	//configurarAcciones
-	juegoGranja.configurarAcciones(){
 	
-	}
+	
  	
 }

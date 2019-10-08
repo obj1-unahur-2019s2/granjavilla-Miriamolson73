@@ -5,7 +5,8 @@ import direcciones.*
 
 object oso {
 	var property position = new Position(x = 0, y = 0)
-	const property image = ""
+	const property image = "oso.png"
+	//const property image = "player.png"
 	var property plantasCosechadas=[]
 	method plantarMaiz(){
 		game.addVisual(new Maiz(position=self.position()))
