@@ -56,19 +56,10 @@ object juegoGranja{
    // VISUALES
    //accciones
    method configurarAcciones(){
-   game.onTick(1000,"movimientoOso",{oso.moverEnDireccion(este)})}
-   var dado=(1..1).map({n=>0.randomUpTo(4).truncate(0)})
-  
-   if (dado==0 and oso.position().y()<game.height()-1){
-   	oso.position(oso.position().up(1)}
-   else if (dado==1 and oso.position().y()>0){
-   	oso.position(oso.position().down(1)}
-   	
-   else if (dado==2 and oso.position().x()>0){
-   	oso.position(oso.position().left(1))   }
-   	else if (dado==3)and oso.position().x()<game.width()-1){
-   		oso.position(oso.position().right(1))
+    game.onTick(1000,"movimientoOso",{oso.moverEnDireccion(este)})}
+   
+   
    	}   
    	   
    
-}
+

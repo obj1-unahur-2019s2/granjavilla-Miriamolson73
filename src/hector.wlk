@@ -6,6 +6,8 @@ object hector {
 	var property position = new Position(x = 3, y = 3)
 	const property image = "player.png"
 	var property plantasCosechadas=[]
+	var property ganancias
+	
 	method plantarMaiz(){
 		game.addVisual(new Maiz(position=self.position()))
 	}
@@ -20,7 +22,11 @@ object hector {
 	method cantidadDePlantasCosechadas(){
 		return plantasCosechadas.size()
 	}	
+	method venderCultivo(){
+		ganancias=plantasCosechadas.size()
+		plantasCosechadas.forEach({planta=>game.removeVisual(planta)})
 	
+	}
 	method moveteALaIzquierda(){}
 	method teChocoElOso(){}
 		

@@ -30,6 +30,7 @@ import oso.*
 
 	method regate() {
 		if (not esAdulta) { esAdulta = true }
+		else {esAdulta}
 	}
 	method teChocoElOso() {
 		self.regate()
@@ -38,12 +39,40 @@ import oso.*
 
 class Trigo {
 	var property position
+	var property evolucion=0
 
-	method image() { return "wheat_0.png" }
-	method regate() { /* a completar */ }
+	method image() { 
+		if (evolucion==0) {	return "wheat_0.png"}
+		else if (evolucion==1){return "wheat_1.png"	}
+		else if (evolucion==2){return "wheat_2.png"}
+	    else { return "wheat_3.png"}
+	}
+	
+	method regate() {if (evolucion<3){ evolucion+=1}
+					 else {evolucion=0}	
+	}		
+	
+	
+	
 	method teChocoElOso() {
 		if (position.x() > 0) {
 			position = position.left(1)
 		}
 	}
+}
+class Tomaco{
+	var property position
+	var property esAdulta=false
+
+	method image() { 
+		if (esAdulta){return "tomaco.png"}
+		else {return "tomaco_baby.png"}
+	}
+	method regate() { if (esAdulta){esAdulta=false}
+					  else {esAdulta=true}	
+	method teChocoElOso() {
+		
+		}
+	}
+	
 }

@@ -23,7 +23,27 @@ object oso {
 		return plantasCosechadas.size()
 	}	
 	method moveteALaIzquierda(){}
+	//OJO FIJATE BIEN
 	method moverEnDireccion(direccion){
 		self.position(direccion.siguientePosicion(self.position()))
 	}
+	method moveteAlAzar(){
+		var dado=1.randomUpTo(5).truncate(0)
+		if(dado==1){self.moveteALaIzquierda}
+	}
+	
+	
+	
+	/*/	var dado=(1..1).map({n=>0.randomUpTo(4).truncate(0)})
+  
+   if (dado==0 and oso.position().y()<game.height()-1){
+   	oso.position(oso.position().up(1)}
+   else if (dado==1 and oso.position().y()>0){
+   	oso.position(oso.position().down(1)}
+   	
+   else if (dado==2 and oso.position().x()>0){
+   	oso.position(oso.position().left(1))   }
+   	else if (dado==3)and oso.position().x()<game.width()-1){
+   		oso.position(oso.position().right(1))
+	}*/
 }
