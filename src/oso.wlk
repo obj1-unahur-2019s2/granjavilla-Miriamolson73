@@ -2,6 +2,7 @@ import wollok.game.*
 import hector.*
 import cultivos.*
 import direcciones.*
+import juegogranja.*
 
 object oso {
 	var property position = new Position(x = 0, y = 0)
@@ -22,14 +23,13 @@ object oso {
 	method cantidadDePlantasCosechadas(){
 		return plantasCosechadas.size()
 	}	
-	method moveteALaIzquierda(){}
-	//OJO FIJATE BIEN
+	
 	method moverEnDireccion(direccion){
 		self.position(direccion.siguientePosicion(self.position()))
 	}
 	method moveteAlAzar(){
 		var dado=1.randomUpTo(5).truncate(0)
-		if(dado==1){self.moveteALaIzquierda}
+		if(dado==1){self.moverEnDireccion(ALaIzquierda}
 	}
 	
 	

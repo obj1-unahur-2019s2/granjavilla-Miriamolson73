@@ -1,6 +1,8 @@
 import wollok.game.*
 import hector.*
 import oso.*
+import direcciones.*
+import juegogranja.*
 
 /*class Maiz {
 	var property position=new Position(x = 0,y = 0)
@@ -17,7 +19,8 @@ import oso.*
 	class Maiz {
 	var property position
 	var property esAdulta = false 
-
+   
+    
 	method image() {
 		// TODO: hacer que devuelva la imagen que corresponde
 		//return "corn_baby.png"
@@ -40,6 +43,7 @@ import oso.*
 class Trigo {
 	var property position
 	var property evolucion=0
+	
 
 	method image() { 
 		if (evolucion==0) {	return "wheat_0.png"}
@@ -62,17 +66,18 @@ class Trigo {
 }
 class Tomaco{
 	var property position
-	var property esAdulta=false
+	
+	
 
 	method image() { 
-		if (esAdulta){return "tomaco.png"}
-		else {return "tomaco_baby.png"}
-	}
-	method regate() { if (esAdulta){esAdulta=false}
-					  else {esAdulta=true}	
-	method teChocoElOso() {
+		return "tomaco.png"	}
 		
-		}
-	}
+		
+	method regate() { self.moverEnDireccion(sur)}
+						
+	method teChocoElOso (){	}
 	
-}
+	method moverEnDireccion(direccion){
+		self.position(direccion.siguientePosicion(self.position()))
+	}
+}	
